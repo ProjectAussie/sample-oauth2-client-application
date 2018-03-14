@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "agardner@embarkvet.com",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.16.3",
     "request": "^2.85.0"

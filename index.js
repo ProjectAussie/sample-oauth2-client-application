@@ -3,12 +3,12 @@ var request = require('request')
 
 var embark_domain = 'https://embarkvet.com'
 
-// This should be the redirect_uri you've entered at embarkvet.com/members/manage-client-app
+// This should be the redirect_uri you've entered at https://embarkvet.com/members/manage-client-app
 var redirect_uri = 'http://localhost:3000/redirect-from-embark-oauth'
 
-// get your client application's client_id and client_secret from embarkvet.com/members/manage-client-app
-var client_id = 'XXXXXXX'
-var client_secret = 'XXXXXXX'
+// get your client application's client_id and client_secret from https://embarkvet.com/members/manage-client-app
+var client_id = 'XXXXXX'
+var client_secret = 'XXXXXX'
 
 var token_info = null
 
@@ -47,14 +47,13 @@ app.get('/show-embark-data', function (req, res) {
 		method: 'POST',
 		json: true,
 		body: {
-			query: '{\ngetTokenUser {\n id\n pets {\n petNum\n type\n name\n handle\n }\n}\n}', // replace this with a custom query built with GraphiQL
+			query: '{\ngetTokenUser {\n id\n pets {\n petNum\n type\n name\n handle\n }\n}\n}', // just a sample query, explore more options at https://embarkvet.com/api/graphiql
 			variables: null,
 			operationName: null
 		},
 		headers: {
 			Authorization: 'Bearer ' + token_info.access_token
 		}
-
 	}, function (err, response, data) {
 		console.log('err:')
 		console.log(err)
